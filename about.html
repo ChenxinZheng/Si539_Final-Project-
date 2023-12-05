@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo"><a href = "index.html"><img src="images/dday logo.png" alt="d-day logo"></a></h1>
+            <ul class = "links">
+                <li><a href = "index.html">Home</a></li>
+                <li><a href = "merchandise.html">Merchandise</a></li> 
+                <li><a href = "album.html">Album</a></li> 
+                <li><a href = "about.html" class="active">About</a></li>
+            </ul>
+        </nav>
+      </header>
+
+    <section class="about-container">
+        <!-- About the Developer -->
+        <div class="about-card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <!-- Your content -->
+                    <img src="images/la img.jpg" alt="Your Photo">
+                    <p>Your Name</p>
+                </div>
+                <div class="card-back">
+                    <!-- Your bio and links -->
+                </div>
+            </div>
+        </div>
+
+        <!-- About SUGA -->
+        <div class="about-card" onclick="flipCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <!-- SUGA's content -->
+                    <img src="images/nj img.jpg" alt="SUGA Photo">
+                    <p>SUGA</p>
+                </div>
+                <div class="card-back">
+                    <!-- SUGA's bio and links -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© Si 539 | Chenxin Zheng | SUGA | Agust D Tour In US</p>
+    </footer>
+
+    <script>
+        function flipCard(card) {
+            card.querySelector('.card-inner').classList.toggle('is-flipped');
+        }
+    </script>
+</body>
+</html>
