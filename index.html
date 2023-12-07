@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/html5reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Suga D-Day Tour In US</title>
 </head>
-<body>
+<body class="homepage">
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
     <header>
         <nav>
@@ -18,7 +18,6 @@
                 <li><a href = "index.html" class="active">Home</a></li> 
                 <li><a href = "merchandise.html">Merchandise</a></li>
                 <li><a href = "album.html">Album</a></li> 
-                <li><a href = "about.html">About</a></li>
             </ul>
         </nav>
     </header>
@@ -36,28 +35,120 @@
             <h2>Among this tour, there were 11 of the concerts that held in five different cities in the US.</h2>
           </div>
         </div>
-        <div class="media-scroller">
+        <div class="media-scroller" tabindex="0">
           <div class="media-element">
-              <img src="images/ny img.jpg" alt="suga in new york">
+              <img src="images/4-26-1.jpg" alt="suga in new york day1">
+              <span class="description">
+                Location: Ubs Arena, New York<br>
+                Date: April 26th
+            </span>
+          </div>
+          <div class="media-element" >
+              <img src="images/4.27-1.jpg" alt="suga in new york day2">
+              <span class="description">
+                Location: Ubs Arena, New York<br>
+                Date: April 27th
+            </span>
           </div>
           <div class="media-element">
-              <img src="images/nj img.jpg" alt="suga in new jersey">
+            <img src="images/4.27-2.jpg" alt="also suga in new york day2">
+            <span class="description">
+              Location: Ubs Arena, New York<br>
+              Date: April 27th
+          </span>
+        </div>
+          <div class="media-element">
+              <img src="images/4.29-1.jpg" alt="suga in new jersey">
+              <span class="description">
+                Location: Prudential Center, New Jersey<br>
+                Date: April 29th
+            </span>
           </div>
           <div class="media-element">
-              <img src="images/chicago img.jpg" alt="suga in chicago">
+            <img src="images/5.3-1.jpg" alt="suga in chicago day1">
+            <span class="description">
+              Location: Allstate Arena, Chicago<br>
+              Date: May 3rd
+          </span>
+        </div>
+          <div class="media-element">
+            <img src="images/5.5-1.jpg" alt="suga in chicago day2">
+            <span class="description">
+              Location: Allstate Arena, Chicago<br>
+              Date: May 5th
+          </span>
+        </div>
+          <div class="media-element">
+              <img src="images/5.6-1.jpg" alt="suga in chicago day3">
+              <span class="description">
+                Location: Allstate Arena, Chicago<br>
+                Date: May 6th
+            </span>
           </div>
           <div class="media-element">
-              <img src="images/la img.jpg" alt="suga in la">
+              <img src="images/5.6-2.jpg" alt="also suga in chicago day3">
+              <span class="description">
+                Location: Allstate Arena, Chicago<br>
+                Date: May 6th
+            </span>
           </div>
           <div class="media-element">
-              <img src="images/oakland img.jpg" alt="suga in oakland">
+            <img src="images/5.10-1.jpg" alt="suga in la day1">
+            <span class="description">
+              Location: Kia Forum, Los Angeles<br>
+              Date: May 10th
+            </span>
           </div>
           <div class="media-element">
-              <img src="images/oakland img.jpg" alt="suga in oakland">
+            <img src="images/5.10-2.jpg" alt="also suga in la day1">
+            <span class="description">
+              Location: Kia Forum, Los Angeles<br>
+              Date: May 10th
+            </span>
           </div>
           <div class="media-element">
-              <img src="images/oakland img.jpg" alt="suga in oakland">
+            <img src="images/5.11-1.jpg" alt="suga in la day2">
+            <span class="description">
+              Location: Kia Forum, Los Angeles<br>
+              Date: May 11st
+            </span>
           </div>
+          <div class="media-element">
+            <img src="images/5.14-1.jpg" alt="suga in la day3">
+            <span class="description">
+              Location: Kia Forum, Los Angeles<br>
+              Date: May 14th
+            </span>
+          </div>
+          <div class="media-element">
+            <img src="images/5.14-2.jpg" alt="also suga in la day3">
+            <span class="description">
+              Location: Kia Forum, Los Angeles<br>
+              Date: May 14th
+            </span>
+          </div>
+          <div class="media-element">
+            <img src="images/5.16-1.jpg" alt="suga in oakland day1">
+            <span class="description">
+              Location: Oakland Arena, Oakland<br>
+              Date: May 16th
+            </span>
+          </div>
+          <div class="media-element">
+            <img src="images/5.17-1.jpg" alt="suga in oakland day2">
+            <span class="description">
+              Location: Oakland Arena, Oakland<br>
+              Date: May 17th
+            </span>
+          </div>
+          <div class="media-element">
+            <img src="images/5.17-2.jpg" alt="also suga in oakland day2">
+            <span class="description">
+              Location: Oakland Arena, Oakland<br>
+              Date: May 17th
+            </span>
+          </div>
+      </div>
       </div>
       
         <video autoplay muted loop id="backgroundVideo">
@@ -69,5 +160,15 @@
     <footer>
       <p>© Si 539 | Chenxin Zheng | SUGA | Agust D Tour In US</p>
   </footer>
+
+  <script>
+    document.querySelector('.media-scroller').addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight') {
+            this.scrollLeft += 100; // Scroll right
+        } else if (e.key === 'ArrowLeft') {
+            this.scrollLeft -= 100; // Scroll left
+        }
+    });
+  </script>
   </body>
   </html>
