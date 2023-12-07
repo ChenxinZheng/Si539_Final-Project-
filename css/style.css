@@ -130,6 +130,14 @@ main {
     transition: transform 0.3s ease;
 }
 
+#home-about2 {
+    text-align: center;
+    justify-content: center;
+    margin: 50px 50px 50px 50px;
+    background-color: transparent;
+    transition: transform 0.3s ease;
+}
+
 #home-about:hover {
     transform: scale(1.05);
 }
