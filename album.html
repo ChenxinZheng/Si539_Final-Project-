@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Album</title>
 </head>
@@ -14,34 +15,36 @@
                 <li><a href = "index.html">Home</a></li> 
                 <li><a href = "merchandise.html">Merchandise</a></li>
                 <li><a href = "album.html" class="active">Album</a></li> 
-                <li><a href = "about.html">About</a></li>
             </ul>
         </nav>
       </header>
 
-    <section id="album-cover">
-        <img src="images/album_cover.jpg" alt="Album Cover">
-    <section id="album-info">
-        <div class="info-part">
-            <h2>About the Album</h2>
-            <p>21st century K-Pop icons BTS member SUGA released his first official solo album D-DAY under his another moniker Agust D on April 21, 2023.</p>
-            <p>D-DAY includes a total of 10 tracks including main track "Haegeum" and pre-release track "People Pt.2 (feat. IU)". The album acts as the finale of the Agust D trilogy after his two previous mixtapes, Agust D (2016) and D-2 (2020).</p>
-            <p>The main track "Haegeum" puts its spin on a hip-hop track with Korean traditional string instrument haegeum sound. SUGA participated in the songwriting of all tracks and the overall production of D-DAY, boasting his unparalleled capability as a musician and producer.</p>
-        </div>
-    </section>
-    <div class="album-tracklist">
-        <section id="track-list">
-            <div class="image-preview-container">
-                <div id="large-image-container">
-                    <button id="prev-button">&lt;</button>
-                    <img src="images/la img.jpg" alt="Large Image" id="large-image">
-                    <button id="next-button">&gt;</button>
-                </div>
-                <div class="image-scroll-container">
-                    <!-- Thumbnails -->
-                    <img src="images/la img.jpg" alt="Image 1" class="preview-image">
-                    <img src="images/ny img.jpg" alt="Image 2" class="preview-image">
-                    <!-- Add more thumbnails here -->
+    <div class="content-container">
+        <section id="album-info">
+            <div class="info-part">
+                <h2>About the Album</h2>
+                <p>21st century K-Pop icons BTS member SUGA released his first official solo album D-DAY under his another moniker Agust D on April 21, 2023.</p>
+                <p>D-DAY includes a total of 10 tracks including main track "Haegeum" and pre-release track "People Pt.2 (feat. IU)". The album acts as the finale of the Agust D trilogy after his two previous mixtapes, Agust D (2016) and D-2 (2020).</p>
+                <p>The main track "Haegeum" puts its spin on a hip-hop track with Korean traditional string instrument haegeum sound. SUGA participated in the songwriting of all tracks and the overall production of D-DAY, boasting his unparalleled capability as a musician and producer.</p>
+            </div>
+        </section>
+        <div class="bottom-row">
+            <section id="track-list">
+                <div class="image-preview-container">
+                    <div id="large-image-container" >
+                        <button id="prev-button">&lt;</button>
+                        <img src="images/concept photo1.jpeg" alt="album concept photo 1 in bathtub" id="large-image">
+                        <button id="next-button">&gt;</button>
+                    </div>
+                <div class="image-scroll-container" tabindex="0">
+                    <img src="images/concept photo1.jpeg" alt="album concept photo 1 in bathtub" class="preview-image">
+                    <img src="images/concept photo2.jpeg" alt="album concept photo 2 in front of mirror" class="preview-image">
+                    <img src="images/concept photo3.jpeg" alt="album concept photo 3" class="preview-image">
+                    <img src="images/concept photo4.jpeg" alt="album concept photo 4 fire" class="preview-image">
+                    <img src="images/concept photo5.jpeg" alt="album concept photo 5 in suit" class="preview-image">
+                    <img src="images/concept photo6.jpeg" alt="album concept photo 6 in jacket" class="preview-image">
+                    <img src="images/concept photo7.jpeg" alt="album concept photo 7" class="preview-image">
+                    <img src="images/concept photo8.jpeg" alt="album concept photo 8 in suit stare" class="preview-image">
                 </div>
             </div>
  
@@ -68,29 +71,61 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.youtube-link').forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            var videoUrl = this.getAttribute('data-video'); // Get the video URL
-            document.getElementById('youtube-video').src = videoUrl; // Set the iframe src
+       document.querySelectorAll('.youtube-link').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                var videoUrl = this.getAttribute('data-video'); 
+                document.getElementById('youtube-video').src = videoUrl;
+            });
         });
-    });
 
-    document.querySelectorAll('.preview-image').forEach(image => {
-        image.addEventListener('click', function() {
-            document.getElementById('large-image').src = this.src; // Change the source of the large image
+        // Image gallery navigation
+        var images = document.querySelectorAll('.preview-image');
+        var imageSrcs = Array.from(images).map(img => img.src);
+        var currentIndex = 0;
+
+        function updateDisplayedImage() {
+            if (currentIndex >= 0 && currentIndex < imageSrcs.length) {
+                document.getElementById('large-image').src = imageSrcs[currentIndex];
+            }
+        }
+
+        document.getElementById('prev-button').addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateDisplayedImage();
+            }
         });
-    });
-    
-    document.getElementById('prev-button').addEventListener('click', function() {
-    // Logic to go to the previous image
-    });
-  
-    document.getElementById('next-button').addEventListener('click', function() {
-    // Logic to go to the next image
-    });
+
+        document.getElementById('next-button').addEventListener('click', function() {
+            if (currentIndex < imageSrcs.length - 1) {
+                currentIndex++;
+                updateDisplayedImage();
+            }
+        });
+
+        document.querySelectorAll('.preview-image').forEach(image => {
+            image.addEventListener('click', function() {
+                currentIndex = imageSrcs.indexOf(this.src);
+                updateDisplayedImage();
+            });
+        });
+
+        // Keyboard navigation for image scroll container
+        document.querySelector('.image-scroll-container').addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateDisplayedImage();
+                }
+            } else if (e.key === 'ArrowRight') {
+                if (currentIndex < imageSrcs.length - 1) {
+                    currentIndex++;
+                    updateDisplayedImage();
+                }
+            }
+        });
     
     </script>
 </body>
-
 </html>
