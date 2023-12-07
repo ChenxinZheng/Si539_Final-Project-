@@ -142,6 +142,10 @@ main {
     transform: scale(1.05);
 }
 
+#home-about2:hover {
+    transform: scale(1.05);
+}
+
 .media-scroller {
     display: flex;
     overflow-x: auto;
