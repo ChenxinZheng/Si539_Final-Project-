@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Merchandises</title>
 </head>
-<body>
+<body class="merchandisepage">
     <header>
         <header>
             <nav>
@@ -15,14 +16,12 @@
                     <li><a href = "index.html">Home</a></li> 
                     <li><a href = "merchandise.html" class="active">Merchandise</a></li>
                     <li><a href = "album.html">Album</a></li> 
-                    <li><a href = "about.html">About</a></li>
                 </ul>
             </nav>
           </header>
     </header>
     <section id="merch-items">
         <div class="merch-grid">
-            <!-- merchandise item 1-->
             <div class="merch-item">
                 <div class="card-inner">
                     <!-- Front Side (Image) -->
@@ -153,6 +152,69 @@
             </div>
             <!-- end of merchandise item 6 -->
 
+            <!-- merchandise item 7-->
+            <div class="merch-item">
+                <div class="card-inner">
+                    <!-- Front Side (Image) -->
+                    <div class="card-front">
+                        <img src="images/badge.jpg" alt="badge image">
+                        <h3>Badge Set</h3>
+                        <p class="price">$23.80</p>
+                        <h3> Not Available </h3>
+                    </div>
+            
+                    <!-- Back Side (Description and Button) -->
+                    <div class="card-back">
+                        <p>A set of two bages: a flame-shaped badge and a badge featuring the "SUGA | Agust D" text.</p>
+                        <p>Dimensions: 25 x 40 x 2 mm</p>
+                        <button> Sold Out </button>
+                    </div>
+                </div>
+            </div>
+            <!-- end of merchandise item 7 -->
+
+            <!-- merchandise item 8-->
+            <div class="merch-item">
+                <div class="card-inner">
+                    <!-- Front Side (Image) -->
+                    <div class="card-front">
+                        <img src="images/cap.jpg" alt="black cap image">
+                        <h3>Ball Cap</h3>
+                        <p class="price">$46.80</p>
+                        <h3> Not Available </h3>
+                    </div>
+            
+                    <!-- Back Side (Description and Button) -->
+                    <div class="card-back">
+                        <p>A minimal black ball cap, made with cotton.</p>
+                        <p>Dimensions: 70 x 130 mm</p>
+                        <button> Sold Out </button>
+                    </div>
+                </div>
+            </div>
+            <!-- end of merchandise item 8-->
+
+            <!-- merchandise item 9-->
+            <div class="merch-item">
+                <div class="card-inner">
+                    <!-- Front Side (Image) -->
+                    <div class="card-front">
+                        <img src="images/bag.jpg" alt="black bag image">
+                        <h3>Cross Bag</h3>
+                        <p class="price">$76.80</p>
+                        <h3> Not Available </h3>
+                    </div>
+            
+                    <!-- Back Side (Description and Button) -->
+                    <div class="card-back">
+                        <p>This black crossbody bag is perfect for all of your everyday items.</p>
+                        <p>Dimensions: 400 x 280 x 60 mm</p>
+                        <button> Sold Out </button>
+                    </div>
+                </div>
+            </div>
+            <!-- end of merchandise item 9 -->
+
             <!-- merchandise item 10-->
             <div class="merch-item">
                 <div class="card-inner">
@@ -188,14 +250,13 @@
     <script>
         document.querySelectorAll('.merch-item').forEach(item => {
     item.addEventListener('click', function() {
-        // Flip back any currently flipped items
+
         document.querySelectorAll('.merch-item .is-flipped').forEach(flippedItem => {
             if (flippedItem !== this.querySelector('.card-inner')) {
                 flippedItem.classList.remove('is-flipped');
             }
         });
 
-        // Flip the clicked item
         this.querySelector('.card-inner').classList.toggle('is-flipped');
     });
     });
